@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 
 
 
@@ -18,7 +19,8 @@ class Form extends Component {
     
     handleSubmit = event => {
         event.preventDefault();
-        this.props.onSubmit(this.state);
+        const { name, number } = this.state;
+        this.props.onSubmit({name, number});
         this.reset();
     }
      reset = () => {
@@ -59,5 +61,10 @@ class Form extends Component {
         );
     }
 }
+
+Form.propTypes = {
+  name: PropTypes.string,
+  number: PropTypes.string,
+};
 
 export default Form;
