@@ -32,9 +32,8 @@ class Form extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-          <h1>Phonebook</h1>
-          <label>Name
+          <form onSubmit={this.handleSubmit}>
+            <label>Name
             <input
               type="text"
               name="name"
